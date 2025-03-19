@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internal Link Map</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-section">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+        </div>
+        <h1>Internal Link Map</h1>
+      </div>
+      <button id="analyze" class="btn-primary">
+        <svg class="analyze-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        Analyser
+      </button>
+    </header>
+
+    <main>
+      <div class="loading-overlay" id="loading">
+        <div class="spinner"></div>
+        <p>Analyse en cours...</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat-item">
+          <div class="stat-icon total-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          </div>
+          <span id="totalLinks">0</span>
+          <label>Liens totaux</label>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon dofollow-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <span id="dofollow">0</span>
+          <label>Dofollow</label>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon nofollow-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+          </div>
+          <span id="nofollow">0</span>
+          <label>Nofollow</label>
+        </div>
+      </div>
+
+      <div class="categories-section">
+        <div class="categories-header">
+          <h2>Catégories</h2>
+          <div class="categories-stats" id="categoriesStats"></div>
+        </div>
+        <div id="categoriesList" class="categories-list"></div>
+      </div>
+
+      <div class="link-section">
+        <div class="link-header">
+          <h2>Liens détectés</h2>
+          <div class="search-box">
+            <input type="text" id="searchLinks" placeholder="Rechercher des liens...">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </div>
+        </div>
+        <div id="linkList" class="link-list"></div>
+      </div>
+
+      <div class="review-section">
+        <div class="review-content">
+          <h2>Vous aimez cet outil ?</h2>
+          <p>Laissez-nous un avis pour nous aider à l'améliorer !</p>
+          <a href="https://g.page/r/CaWr6uhau0-hEBM/review" target="_blank" class="btn-review">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            Évaluer sur Google
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
